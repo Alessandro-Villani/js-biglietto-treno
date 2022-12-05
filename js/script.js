@@ -58,3 +58,10 @@ const userKilometers = prompt('Inserisci km da percorrere', '50');
 
 const userAge = prompt('Inserisci età', '20');
 ////console.log(userAge);
+
+// TODO 7. userKilometers and userAge data validation
+
+// 8. Calculate standard price and store in variable price
+
+const price = userKilometers * kmPrice;
+////console.log(price);
