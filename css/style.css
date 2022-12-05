@@ -1,0 +1,20 @@
+.ticket .col-4{
+   border-right: 1px dashed black;
+}
+
+.ticket{
+    height: 300px;
+}
+
+.ticket header{
+    height: 15%;
+}
+
+.ticket-body{
+    height: 85%;
+    background-color: rgb(254,246,147);
+}
+
+.ticket-body p:last-of-type{
+    justify-self: end;
+}

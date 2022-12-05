@@ -4,13 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTAWESOME -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css' integrity='sha512-FA9cIbtlP61W0PRtX36P6CGRy0vZs0C2Uw26Q1cMmj3xwhftftymr0sj8/YeezDnRwL9wtWw8ZwtCiTDXlXGjQ==' crossorigin='anonymous'/>
+    <!-- BOOTSTRAP -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- TITLE -->
     <title>Biglietti Treno</title>
 </head>
-<body>
+<body class="vh-100 d-flex align-items-center">
+    <div class="ticket container">
+        <header class="ticket-header row bg-primary text-white align-items-center rounded-top">
+            <div class="col-4 h-100 d-flex align-items-center"><b class="ms-2"><i class="fa-solid fa-train me-2"></i> Ticket</b></div>
+            <div class="col-8 h-100 d-flex align-items-center justify-content-end"><b class="me-2">Ticket <i class="fa-solid fa-train ms-2"></i></b></div>
+        </header>
+        <div class="ticket-body row rounded-bottom">
+            <div class="col-4 d-flex flex-column justify-content-between py-2">
+                <div class="top">
+                    <h5 id="name"></h3>
+                    <h5 id="surname"></h3>
+                    <p class="mb-1 mt-2">Età: <span id="age"></span></p>
+                    <p class="mt-0">Km da percorrere: <span id="km"></span></p>
+                </div>
+                <div class="bottom">
+                    <p>Data: <span id="date"></span> Ora: <span id="time"></span></p>
+                </div>
+            </div>
+            <div class="col-8 py-2">
+                <div class="row h-100">
+                    <div class="col">
+                        <h5 id="namesurname"></h5>
+                        <p class="mb-1 mt-2">Età: <span id="age-2"></span></p>
+                        <p class="mt-0">Km da percorrere: <span id="km-2"></span></p>
+                    </div>
+                    <div class="col d-flex justify-content-end align-items-end flex-column h-100">
+                        <p id="base-price"></p>
+                        <p id="discount"></p>
+                        <p><b>Prezzo: <span id="target"></span> €</p></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <p>Il prezzo del biglietto è: <span id="target"></span> €</p>
-    
+
     <script src="js/script.js"></script>
 </body>
 </html>

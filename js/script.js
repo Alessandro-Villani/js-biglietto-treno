@@ -34,6 +34,25 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 const targetElement = document.getElementById('target');
 ////console.log(targetElement);
 
+// EXTRA target
+
+const targetName = document.getElementById('name');
+const targetSurname = document.getElementById('surname');
+const targetNameSurname = document.getElementById('namesurname');
+const targetAge = document.getElementById('age');
+const targetAge2 = document.getElementById('age-2');
+const targetDate = document.getElementById('date');
+const targetTime = document.getElementById('time');
+const targetKm = document.getElementById('km');
+const targetKm2 = document.getElementById('km-2');
+const targetBasePrice = document.getElementById('base-price');
+const targetDiscount = document.getElementById('discount');
+
+
+//EXTRA initialize date
+
+const date = new Date();
+
 //2. Set price/km in a variable called kmPrice
 
 const kmPrice = 0.21;
@@ -58,6 +77,14 @@ const userKilometers = parseInt(prompt('Inserisci km da percorrere', '50').trim(
 
 const userAge = parseInt(prompt('Inserisci età', '20').trim());
 ////console.log(userAge);
+
+// EXTRA Ask user name and surname
+
+const userName = prompt('Inserisci nome', 'Alessandro');
+console.log(userName);
+const userSurname = prompt('Inserisci cognome', 'Villani');
+console.log(userSurname);
+
 
 // 7. userKilometers and userAge data validation
 
@@ -84,16 +111,33 @@ if (isValid){
 
     // 9a. if user underage apply underage discount and store in variable price
     if (userAge < 18){
+        targetBasePrice.innerHTML = `Prezzo base: <span class="text-danger text-decoration-line-through"><b>${price.toFixed(2)} €</b></span>`;
+        targetDiscount.innerText = "Sconto: " + (underageDiscount*100) + '%';
         price -= price*underageDiscount;
         ////console.log(price);
     } 
     // 9b. if user over 65 apply over 65 discount and store in variable price
     else if (userAge >= 65){ 
+        targetBasePrice.innerHTML = `Prezzo base: <span class="text-danger text-decoration-line-through"><b>${price.toFixed(2)} €</b></span>`;
+        targetDiscount.innerText = "Sconto: " + (over65Discount*100) + '%';
         price -= price*over65Discount;
         ////console.log(price);    
     }
 
     // 10. Print final price on page
 
-    targetElement.textContent = price.toFixed(2);
+    targetElement.innerText = price.toFixed(2);
+
+    //EXTRA Print
+
+    targetName.innerText = userName.toUpperCase();
+    targetSurname.innerText = userSurname.toUpperCase();
+    targetNameSurname.innerText = `${userName.toUpperCase()} ${userSurname.toUpperCase()}`;
+    targetAge.innerText = userAge;
+    targetAge2.innerText = userAge;
+    targetDate.innerText = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    targetTime.innerText = `${date.getHours()}:${date.getMinutes()}`; 
+    targetKm.innerText = userKilometers;
+    targetKm2.innerText = userKilometers;
+
 }
