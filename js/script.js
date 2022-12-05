@@ -48,3 +48,13 @@ const underageDiscount = 0.2;
 
 const over65Discount = 0.4;
 ////console.log(over65Discount);
+
+// 5. Ask user travel kilometers and store it in userKilometers variable
+
+const userKilometers = prompt('Inserisci km da percorrere', '50');
+////console.log(userKilometers);
+
+// 6. Ask user age and store it in userAge variable
+
+const userAge = prompt('Inserisci età', '20');
+////console.log(userAge);
