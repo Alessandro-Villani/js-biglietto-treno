@@ -79,3 +79,6 @@ else if (userAge >= 65){
     console.log(price);    
 }
 
+// 10. Print final price on page
+
+targetElement.textContent = price.toFixed(2);
