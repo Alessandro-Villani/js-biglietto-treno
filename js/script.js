@@ -63,5 +63,19 @@ const userAge = prompt('Inserisci età', '20');
 
 // 8. Calculate standard price and store in variable price
 
-const price = userKilometers * kmPrice;
-////console.log(price);
+let price = userKilometers * kmPrice;
+console.log(price);
+
+// 9. Verify if the user is underage or over 65
+
+// 9a. if user underage apply underage discount and store in variable price
+if (userAge < 18){
+    price -= price*underageDiscount;
+    console.log(price);
+} 
+// 9b. if user over 65 apply over 65 discount and store in variable price
+else if (userAge >= 65){ 
+    price -= price*over65Discount;
+    console.log(price);    
+}
+
