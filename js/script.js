@@ -51,34 +51,49 @@ const over65Discount = 0.4;
 
 // 5. Ask user travel kilometers and store it in userKilometers variable
 
-const userKilometers = prompt('Inserisci km da percorrere', '50');
+const userKilometers = parseInt(prompt('Inserisci km da percorrere', '50').trim());
 ////console.log(userKilometers);
 
 // 6. Ask user age and store it in userAge variable
 
-const userAge = prompt('Inserisci età', '20');
+const userAge = parseInt(prompt('Inserisci età', '20').trim());
 ////console.log(userAge);
 
-// TODO 7. userKilometers and userAge data validation
+// 7. userKilometers and userAge data validation
 
-// 8. Calculate standard price and store in variable price
+let isValid = true;
 
-let price = userKilometers * kmPrice;
-console.log(price);
-
-// 9. Verify if the user is underage or over 65
-
-// 9a. if user underage apply underage discount and store in variable price
-if (userAge < 18){
-    price -= price*underageDiscount;
-    console.log(price);
-} 
-// 9b. if user over 65 apply over 65 discount and store in variable price
-else if (userAge >= 65){ 
-    price -= price*over65Discount;
-    console.log(price);    
+if (isNaN(userKilometers) || userKilometers < 0){
+    isValid = false;
+    alert('Kilometraggio non valido');
 }
 
-// 10. Print final price on page
+if (isNaN(userAge) || userAge < 0) {
+    isValid = false;
+    alert('Età non valida');
+}
 
-targetElement.textContent = price.toFixed(2);
+if (isValid){
+
+    // 8. Calculate standard price and store in variable price
+
+    let price = userKilometers * kmPrice;
+    ////console.log(price);
+
+    // 9. Verify if the user is underage or over 65
+
+    // 9a. if user underage apply underage discount and store in variable price
+    if (userAge < 18){
+        price -= price*underageDiscount;
+        ////console.log(price);
+    } 
+    // 9b. if user over 65 apply over 65 discount and store in variable price
+    else if (userAge >= 65){ 
+        price -= price*over65Discount;
+        ////console.log(price);    
+    }
+
+    // 10. Print final price on page
+
+    targetElement.textContent = price.toFixed(2);
+}
